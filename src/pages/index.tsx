@@ -8,7 +8,7 @@ import imgDualSense from '@assets/img-dualsense.svg';
 import thumbPs5 from "@assets/thumbs-wander-ps5.png";
 import iconPs5 from "@assets/icon-ps5.svg";
 
-import { CheckoutPix } from './CheckoutPix';
+import CheckoutPix from './CheckoutPix';
 import Head from 'next/head';
 import { api } from '@src/services/api';
 

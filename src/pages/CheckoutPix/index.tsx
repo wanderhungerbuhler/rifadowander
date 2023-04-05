@@ -31,7 +31,7 @@ const FormSchema = z.object({
 
 type FormSchemaType = z.infer<typeof FormSchema>;
 
-export function CheckoutPix({ tickets }: CheckoutPixProps) {
+export default function CheckoutPix({ tickets }: CheckoutPixProps) {
   const [responsePayment, setResponsePayment] = useState<ResponsePaymentProps | null>(null);
   const [linkBuyMercadoPago, setLinkBuyMercadoPago] = useState("");
   const [statusPayment, setStatusPayment] = useState(false);
@@ -143,26 +143,23 @@ export function CheckoutPix({ tickets }: CheckoutPixProps) {
         </Form>
       )}
 
-
       <BoxVerifyPayment>
         {linkBuyMercadoPago && !statusPayment && (
           <iframe src={linkBuyMercadoPago} width="620px" height="500px" title="link_buy" />
         )}
 
-        {/* {statusPayment && (
-
-        )} */}
-
-        <InfoPayment>
-          <Image
-            width={100}
-            src={gifPaymentApproved}
-            alt="Payment Approved"
-          />
-          <h3>Compra Aprovada!</h3>
-          <p>pedimos que envie o comprovante para o WhatsApp abaixo:</p>
-          <a href={`https://wa.me/+351927509754?text=Ol%C3%A1,%20eu%20estou%20interessado(a)%20em%20participar%20desta%20rifa%20e%20por%20isso,%20escolhi%20os%20n%C3%BAmeros%20[${tickets}]`}>Enviar comprovante</a>
-        </InfoPayment>
+        {statusPayment && (
+          <InfoPayment>
+            <Image
+              width={100}
+              src={gifPaymentApproved}
+              alt="Payment Approved"
+            />
+            <h3>Compra Aprovada!</h3>
+            <p>pedimos que envie o comprovante para o WhatsApp abaixo:</p>
+            <a href={`https://wa.me/+351927509754?text=Ol%C3%A1,%20eu%20estou%20interessado(a)%20em%20participar%20desta%20rifa%20e%20por%20isso,%20escolhi%20os%20n%C3%BAmeros%20[${tickets}]`}>Enviar comprovante</a>
+          </InfoPayment>
+        )}
 
         {responsePayment &&
           <button onClick={getStatusPayment}>Já fiz o pagamento!</button>
