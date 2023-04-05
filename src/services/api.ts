@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const urls = [
-  'https://api.mercadopago.com/',
-  'http://localhost:3000/api'
+  `${process.env.NEXT_PUBLIC_MERCADO_PAGO_URL}`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}`
 ];
 
 export const api = urls.map((url) => axios.create({

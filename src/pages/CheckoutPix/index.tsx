@@ -47,7 +47,7 @@ export default function CheckoutPix({ tickets }: CheckoutPixProps) {
   const getStatusPayment = useCallback(async () => {
     await api[0].get(`v1/payments/${responsePayment?.data?.id}`)
       .then(async (response) => {
-        if (response.data.status === "approved") {
+        if (response.data.status === "pending") {
           setStatusPayment(true);
         }
       });
