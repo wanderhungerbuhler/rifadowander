@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const urls = [
   `${process.env.NEXT_PUBLIC_MERCADO_PAGO_URL}`,
