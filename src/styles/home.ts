@@ -25,6 +25,15 @@ export const Container = styled.div`
   }
 `;
 
+export const BoxWhatsApp = styled.div`
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  z-index: 100;
+  right: 50px;
+  bottom: 50px;
+`;
+
 export const CardInfo = styled.div<CardInfoProps>`
   max-width: 960px;
   width: 100%;

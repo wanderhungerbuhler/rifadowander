@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import { Container, Btn, CardInfo } from '@styles/home';
+import { Container, Btn, CardInfo, BoxWhatsApp } from '@styles/home';
 
 import logoSvg from '@assets/logo.svg';
 import imgDualSense from '@assets/img-dualsense.svg';
 import thumbPs5 from "@assets/thumbs-wander-ps5.png";
 import iconPs5 from "@assets/icon-ps5.svg";
+import iconWhatsApp from "@assets/icon-whatsapp.svg";
 
 import CheckoutPix from './CheckoutPix';
 import Head from 'next/head';
@@ -74,6 +75,7 @@ export default function Home() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
+
       <Container>
         <Image
           src={logoSvg}
@@ -107,6 +109,19 @@ export default function Home() {
             alt="Img - Wander e Ps5"
           />
         </CardInfo>
+
+        <BoxWhatsApp>
+          <a
+            href="https://wa.me/+351927509754?text=Ol%C3%A1,%20eu%20tenho%20d%C3%BAvidas%20sobre%20o%20valor%20e%20quando%20ser%C3%A1%20o%20sorteio."
+            target="_blank"
+          >
+            <Image
+              width={70}
+              src={iconWhatsApp}
+              alt="Tire suas dúvidas através do nosso WhatsApp."
+            />
+          </a>
+        </BoxWhatsApp>
 
         <div className="choosenumbers">
           {loadData?.map((number) => (
