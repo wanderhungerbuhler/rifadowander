@@ -74,17 +74,6 @@ export default function CheckoutPix({ tickets }: CheckoutPixProps) {
         status_payment: statusPayment === true ? "approved" : "pending"
       });
 
-      const user = {
-        name,
-        cpf,
-        email,
-        whatsapp
-      }
-
-      const userLocalStorage = JSON.stringify(user);
-
-      localStorage.setItem('@rifadowander', userLocalStorage);
-
       const dataRequest = {
         "transaction_amount": ticketFinal,
         "description": "Rifa do Wander",
