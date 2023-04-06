@@ -128,12 +128,12 @@ export default function Home() {
             <Btn
               key={number?.id}
               style={{
-                border: number?.status_payment === "pending" && "approved" ? "" : selectedItems?.includes(number?.id as never) ? "2px solid #723EB5" : "",
-                background: number?.status_payment === "pending" && "approved" ? "#1E1E1E" : "",
-                color: number?.status_payment === "pending" ? "#323232" : "",
-                textDecoration: number?.status_payment === "pending" && "approved" ? "line-through" : ""
+                border: number?.status_payment === "pending" ? "" : number?.status_payment === "approved" ? "" : selectedItems?.includes(number?.id as never) ? "2px solid #723EB5" : "",
+                background: number?.status_payment === "pending" ? "#1E1E1E" : number?.status_payment === "approved" ? "#1E1E1E" : "",
+                color: number?.status_payment === "pending" ? "#323232" : number?.status_payment === "approved" ? "#323232" : "",
+                textDecoration: number?.status_payment === "pending" ? "line-through" : number?.status_payment === "approved" ? "line-through" : ""
               }}
-              onClick={() => number?.status_payment === "pending" && "approved" ? "" : handleNumbersSelected(number?.id as any)}
+              onClick={() => number?.status_payment === "pending" ? "" : handleNumbersSelected(number?.id as any)}
             >
               {number?.id}
             </Btn>
