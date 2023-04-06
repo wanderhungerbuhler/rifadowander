@@ -117,6 +117,13 @@ export const BoxVerifyPayment = styled.div`
   justify-content: center;
   align-items: center;
 
+  iframe {
+    position: fixed;
+    width: 70%;
+    min-height: 500px;
+    top: 15vh;
+  }
+
   button {
     width: 50%;
     height: 56px;

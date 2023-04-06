@@ -47,8 +47,12 @@ export default function CheckoutPix({ tickets }: CheckoutPixProps) {
   const getStatusPayment = useCallback(async () => {
     await api[0].get(`v1/payments/${responsePayment?.data?.id}`)
       .then(async (response) => {
-        if (response.data.status === "pending") {
+        if (response.data.status === "approved") {
           setStatusPayment(true);
+        } else if (response.data.status === "pending") {
+          alert("AVISO: Por favor, para dar continuidade, você precisa efetuar o pagamento!")
+        } else if (response.data.status === "rejected" || response.data.status === "declined") {
+          alert("AVISO: Houve algum problema com o seu pagamento, por favor, recarregue a página e tente novamente!")
         }
       });
   }, [statusPayment, responsePayment]);
